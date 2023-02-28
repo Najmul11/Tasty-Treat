@@ -6,7 +6,7 @@ import {motion} from 'framer-motion'
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
-    const isAuthenticated = false
+    const isAuthenticated = 'j'
     return (
        <nav>
             <motion.div initial = {{y:'-100%'}} whileInView={{y:'0'}}>

@@ -10,6 +10,18 @@ import './styles/Contact.scss'
 import './styles/About.scss'
 import './styles/Cart.scss'
 import './styles/Shipping.scss'
+import './styles/ConfirmOrder.scss'
+import './styles/PaymentSuccess.scss'
+import './styles/Login.scss'
+import './styles/Profile.scss'
+import './styles/MyOrders.scss'
+import './styles/Dashboard.scss'
+
+
+
+
+
+
 
 
 function App() {
