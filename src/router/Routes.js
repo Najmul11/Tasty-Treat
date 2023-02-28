@@ -1,4 +1,5 @@
 import {createBrowserRouter} from 'react-router-dom'
+import Loader from '../components/Loader/Loader';
 import { Main } from '../layout/Main';
 import About from '../Pages/About/About';
 import Dashboard from '../Pages/Admin/Dashboard/Dashboard';
@@ -80,6 +81,10 @@ export const router = createBrowserRouter([
             {
                 path:'*',
                 element:<NotFound/>
+            },
+            {
+                path:'/load',
+                element:<Loader/>
             },
             
 
