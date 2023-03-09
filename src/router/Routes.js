@@ -16,6 +16,8 @@ import MyOrders from '../Pages/MyOrders/MyOrders';
 import OrderDetails from '../Pages/MyOrders/OrderDetails';
 import NotFound from '../Pages/NotFound/NotFound';
 import Profile from '../Pages/Profile/Profile';
+import AdminRoute from './AdminRoute';
+import ProtectedRoute from './ProtectedRoute';
 
 export const router = createBrowserRouter([
     {
@@ -56,7 +58,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/me',
-                element:<Profile/>
+                element:<ProtectedRoute><Profile/></ProtectedRoute>
             },
             {
                 path:'/myorders',
@@ -68,15 +70,15 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/admin/dashboard',
-                element:<Dashboard/>
+                element:<ProtectedRoute><AdminRoute><Dashboard/></AdminRoute></ProtectedRoute>
             },
             {
                 path:'/admin/orders',
-                element:<Orders/>
+                element:<ProtectedRoute><AdminRoute><Orders/></AdminRoute></ProtectedRoute>
             },
             {
                 path:'/admin/users',
-                element:<Users/>
+                element:<ProtectedRoute><AdminRoute><Users/></AdminRoute></ProtectedRoute>
             },
             {
                 path:'*',

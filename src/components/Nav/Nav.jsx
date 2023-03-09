@@ -4,9 +4,10 @@ import {FiShoppingCart, FiLogIn} from 'react-icons/fi'
 import {FaUser} from 'react-icons/fa'
 import {motion} from 'framer-motion'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Nav = () => {
-    const isAuthenticated = 'j'
+    const {isAuthenticated} = useSelector(state=>state.auth)
     return (
        <nav>
             <motion.div initial = {{y:'-100%'}} whileInView={{y:'0'}}>

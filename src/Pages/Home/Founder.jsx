@@ -17,14 +17,13 @@ export const Founder = () => {
   return (
     <section className="founder">
       <motion.div {...options}>
-        <img src={me} alt="Founder" height={200} width={200} />
-        <h3>Najmul Hoque</h3>
-
-        <p>
-          Hey, Everyone I am Naz, the founder of Tasty Treat.
-          <br />
-          Our aim is to give you  an experience that tantalizes your taste buds and leaves you craving for more..
-        </p>
+            <img src={me} alt="Founder" height={200} width={200} />
+            <h3>Najmul Hoque</h3>
+            <p>
+            Hey, Everyone I am Naz, the founder of Tasty Treat.
+              <br />
+            Our aim is to give you  an experience that tantalizes your taste buds and leaves you craving for more..
+            </p>
       </motion.div>
     </section>
   )

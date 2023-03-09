@@ -1,9 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { Link} from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { getMyOrder } from "../../redux/actions/order";
 
 const MyOrders = () => {
-  const arr = [1, 2, 3, 4];
+  const isToastShownRef = useRef(false);
+
+  const {orders,loading, error}=useSelector(state=>state.orderDetails)
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    if (!isToastShownRef.current) {
+      dispatch(getMyOrder())
+      isToastShownRef.current = true;
+    }
+    
+  },[dispatch, orders])
  
   return (
     <section className="tableClass">
@@ -21,15 +34,19 @@ const MyOrders = () => {
           </thead>
 
           <tbody>
-            {arr.map((i) => (
-              <tr key={i}>
-                <td>#sdkfsdfdsf</td>
-                <td>Processing</td>
-                <td>23</td>
-                <td>₹{21312}</td>
-                <td>COD</td>
+            {orders && orders.map((o,i) => (
+              <tr key={o._id}>
+                <td>#{o._id}</td>
+                <td>{o.orderStatus}</td>
+                <td>{
+                o.orderItems.cheeseBurger.quantity+
+                o.orderItems.vegCheeseBurger.quantity+
+                o.orderItems.burgerWithFries.quantity
+                }</td>
+                <td>TK{o.totalAmount}</td>
+                <td>{o.paymentMethod}</td>
                 <td>
-                  <Link to={`/order/${"asdsds"}`}>
+                  <Link to={`/order/${o._id}`}>
                     <AiOutlineEye />
                   </Link>
                 </td>

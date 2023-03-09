@@ -19,14 +19,16 @@
         margin: 1rem 0;
       }
 
-      > a {
+      > button {
         background-color: $red;
         color: white;
+        border: 0;
         padding: 0.5rem 1rem;
         border-radius: 5px;
         text-align: center;
         margin-top: 2rem;
         float: right;
+        cursor: pointer;
       }
     }
   }

@@ -16,18 +16,38 @@ import './styles/Login.scss'
 import './styles/Profile.scss'
 import './styles/MyOrders.scss'
 import './styles/Dashboard.scss'
-
-
-
-
-
+import { useEffect, useRef } from 'react';
+import {useDispatch, useSelector} from 'react-redux'
+import { loadUser } from './redux/actions/user';
+import toast,{ Toaster } from 'react-hot-toast';
 
 
 
 function App() {
+  const isToastShownRef = useRef(false);
+
+
+  const dispatch = useDispatch()
+  const {error, message} = useSelector(state=>state.auth)
+
+  useEffect(()=>{
+    
+    if (!isToastShownRef.current) {
+      dispatch(loadUser())
+      isToastShownRef.current = true;
+    }
+    if (error) {
+      toast.error(error)
+      isToastShownRef.current = true;
+      dispatch({type:"clearError"})
+    }
+
+  },[dispatch, error, message])
+
   return (
     <div className="App">
         <RouterProvider router={router}></RouterProvider>
+        <Toaster/>
     </div>
   );
 }

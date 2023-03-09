@@ -25,7 +25,7 @@ const MenuCard = ({ itemNum, burgerSrc, price, title, handler, delay = 0 }) => {
 
         <p>{title}</p>
 
-        <button onClick={() => handler(itemNum)}>Buy Now</button>
+        <button onClick={() => handler(itemNum)}>Add to Cart</button>
       </main>
     </motion.div>
   );

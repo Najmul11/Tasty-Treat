@@ -1,29 +1,41 @@
 import React from "react";
 import { motion } from "framer-motion";
-import me from "../../assets/founder.png";
 import { Link } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/actions/user";
+
+
+const options = {
+  initial: {
+    y: "-100%",
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const Profile = () => {
-  const options = {
-    initial: {
-      y: "-100%",
-      opacity: 0,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-    },
-  };
+  const {user}=useSelector(state=>state.auth)
+  const dispatch = useDispatch()
+  const handleLogout = ()=>{
+    dispatch(logout())
+  }
+
+ 
   return (
     <section className="profile">
       <main>
-        <motion.img src={me} alt="User" {...options} />
+        <motion.img src={user?.photo} alt="User" {...options} />
         <motion.h5 {...options} transition={{ delay: 0.3 }}>
          Najmul Hoque
         </motion.h5>
         <motion.div {...options} transition={{ delay: 0.5 }}>
-          <Link
+          {
+            user && user.role==='admin' &&
+            <Link
             to="/admin/dashboard"
             style={{
               borderRadius: 0,
@@ -32,6 +44,7 @@ const Profile = () => {
           >
             <MdDashboard /> Dashboard
           </Link>
+          }
         </motion.div>
         <motion.div
           initial={{
@@ -58,6 +71,7 @@ const Profile = () => {
           transition={{
             delay: 0.3,
           }}
+          onClick={handleLogout}
         >
           Logout
         </motion.button>
