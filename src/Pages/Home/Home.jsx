@@ -2,9 +2,11 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import Menu from './Menu'
 import Sliderr from './Sliderr'
+import useTitle from '../../Hooks/useTitle'
 
 
 export const Home = () => {
+    useTitle('Home')
     const options = {
         initial:{x:'-100%', opacity:'0'},
         whileInView:{x:'0', opacity:1}

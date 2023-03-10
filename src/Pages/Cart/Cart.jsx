@@ -6,6 +6,7 @@ import burger2 from "../../assets/burger2.png";
 // import burger3 from "../../assets/burger3.webp";
 import burger3 from "../../assets/burger3.png";
 import toast from 'react-hot-toast'
+import useTitle from "../../Hooks/useTitle";
 
 const CartItem = ({ value, title, img, increment, decrement }) => (
   <div className="cartItem">
@@ -23,6 +24,7 @@ const CartItem = ({ value, title, img, increment, decrement }) => (
 );
 
 const Cart = () => {
+  useTitle('Cart')
   const {cartItem:{
     theClassic:{quantity:theClassic},
     theCheesy:{quantity:theCheesy},

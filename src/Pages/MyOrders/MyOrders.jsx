@@ -3,8 +3,10 @@ import { Link} from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { getMyOrder } from "../../redux/actions/order";
+import useTitle from "../../Hooks/useTitle";
 
 const MyOrders = () => {
+  useTitle('My orders')
   const isToastShownRef = useRef(false);
 
   const {orders,loading, error}=useSelector(state=>state.orderDetails)

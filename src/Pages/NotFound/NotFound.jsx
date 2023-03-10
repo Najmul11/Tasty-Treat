@@ -1,7 +1,10 @@
 import React from "react";
 import { MdError } from "react-icons/md";
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
+
 const NotFound = () => {
+  useTitle('Not found')
   return (
     <section className="notFound">
       <main>

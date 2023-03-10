@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const PaymentSuccess = () => {
+  useTitle('Payment success')
   return (
     <section className="paymentsuccess">
       <main>

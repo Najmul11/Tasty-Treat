@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import burger from "../../assets/burger2.png";
+import useTitle from "../../Hooks/useTitle";
 
 const Contact = () => {
+  useTitle('Contact')
   const handleSubmit =(e)=>{
     e.preventDefault()
   }

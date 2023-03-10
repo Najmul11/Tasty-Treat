@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { RiFindReplaceLine } from "react-icons/ri";
 import me from "../../assets/founder.png";
+import useTitle from "../../Hooks/useTitle";
 
 const About = () => {
+  useTitle('About')
   return (
     <section className="about">
       <main>

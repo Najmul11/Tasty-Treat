@@ -1,8 +1,10 @@
 import React,{useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Shipping = () => {
+  useTitle('Shipping')
   const {shippingInfo} =useSelector(state=>state.cart)
   const [phone, setPhone]  = useState(shippingInfo?shippingInfo.phone:'')
   const [address, setAddress]  = useState(shippingInfo?shippingInfo.address:'')

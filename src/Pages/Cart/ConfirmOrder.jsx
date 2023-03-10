@@ -8,6 +8,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import axios from "axios";
 import { server } from "../../redux/store";
+import useTitle from "../../Hooks/useTitle";
 
 
 
@@ -15,6 +16,7 @@ import { server } from "../../redux/store";
 const stripePromise=loadStripe('pk_test_51MM2bXEUzOIjs3850ZceXta2ian9MEvnN55bFWFTzUfdBd4Q61msbLe9UP2Xth7AFoXinUVQUY5zJYDj8ltziadQ00u78jnJpo')
 
 const ConfirmOrder = () => {
+  useTitle('Confirm order')
   const [selectedPayment, setSelectedPayment] = useState('COD');
   const [clientSecret, setClientSecret] = useState('');
 

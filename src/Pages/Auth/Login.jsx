@@ -2,8 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FcGoogle } from "react-icons/fc";
 import { server } from "../../redux/store";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
+  useTitle('Login')
   const handleLogin =()=>{
     window.open(`${server}/googleLogin`, "_self")
   }

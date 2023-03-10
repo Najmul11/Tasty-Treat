@@ -1,9 +1,11 @@
 import React,{useRef, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 import { getOrderDetails } from "../../redux/actions/order";
 
 const OrderDetails = () => {
+  useTitle('Order details')
   const isToastShownRef = useRef(false);
 
   const {id} = useParams()
