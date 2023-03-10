@@ -7,7 +7,7 @@ const OrderDetails = () => {
   const isToastShownRef = useRef(false);
 
   const {id} = useParams()
-  const {order,loading, error}=useSelector(state=>state.orderDetails)
+  const {order}=useSelector(state=>state.orderDetails)
 
 
   const dispatch = useDispatch()

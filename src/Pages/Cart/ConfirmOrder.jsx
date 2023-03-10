@@ -22,7 +22,7 @@ const ConfirmOrder = () => {
   // const elements=useElements()
 
   const {cartItem,subTotal,tax,shippingCharge, total, shippingInfo} = useSelector(state=>state.cart)
-  const {user, error}=useSelector(state=>state.auth)
+  const {user}=useSelector(state=>state.auth)
 
   useEffect(()=>{
     const getSecret=async()=>{
