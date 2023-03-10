@@ -125,7 +125,7 @@ const OrderDetails = () => {
                 fontWeight: 800,
               }}
             >
-              ₹{2132}
+              tk{order?.subTotal}
             </div>
           </div>
         </article>

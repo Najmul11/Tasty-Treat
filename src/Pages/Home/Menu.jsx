@@ -76,7 +76,7 @@ const Menu = () => {
           burgerSrc={burger2}
           price={300}
           title="THE CHEESY"
-          delay={0.5}
+          delay={0.4}
           handler={addToCartHandler}
           modalhandler={onOpenModal}
         />
@@ -85,7 +85,7 @@ const Menu = () => {
           burgerSrc={burger3}
           price={500}
           title="THE FIRECRACKER"
-          delay={0.8}
+          delay={0.7}
           handler={addToCartHandler}
           modalhandler={onOpenModal}
         />

@@ -49,6 +49,24 @@
     }
   }
 }
+#payment{
+  width: 70%;
+  background-color: rgb(233, 233, 233);
+  padding: 1rem ;
+  border-radius: 5px;
+  display: flex;
+  >div{
+    width: 80%;
+  }
+  
+  >p{
+    width: 20%;
+    >small{
+      font-size: 10px;
+     }
+  }
+}
+
 
 @media screen and (max-width: 600px) {
   .confirmOrder > main > form {

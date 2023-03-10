@@ -46,11 +46,11 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/confirmorder',
-                element:<ConfirmOrder/>
+                element:<ProtectedRoute><ConfirmOrder/></ProtectedRoute>
             },
             {
                 path:'/paymentsuccess',
-                element:<PaymentSuccess/>
+                element:<ProtectedRoute><PaymentSuccess/></ProtectedRoute>
             },
             {
                 path:'/login',
@@ -62,11 +62,11 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/myorders',
-                element:<MyOrders/>
+                element:<ProtectedRoute><MyOrders/></ProtectedRoute>
             },
             {
                 path:'/order/:id',
-                element:<OrderDetails/>
+                element:<ProtectedRoute><OrderDetails/></ProtectedRoute>
             },
             {
                 path:'/admin/dashboard',

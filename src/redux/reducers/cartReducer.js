@@ -49,7 +49,7 @@ export const cartReducer = createReducer(initialState,{
                         state.cartItem.theFirecracker.quantity* state.cartItem.theFirecracker.price;
         
         state.tax= state.subTotal * .15;
-        state.shippingCharge = state.subTotal > 2000 ? 50 : state.subTotal === 0 ? 0 : 200;
+        state.shippingCharge = state.subTotal > 2000 ? 50 : state.subTotal === 0 ? 0 : 100;
         state.total = state.subTotal + state.tax + state.shippingCharge
     },
     addShippingInfo:(state,action)=>{
@@ -64,15 +64,15 @@ export const cartReducer = createReducer(initialState,{
         state.cartItem = {
             theClassic:{
                 quantity:0,
-                price:200,
+                price:150,
             },
             theCheesy:{
                 quantity:0,
-                price:500,
+                price:300,
             },
             theFirecracker:{
                 quantity:0,
-                price:1800,
+                price:500,
             },
         };
         state.subTotal = 0;
@@ -94,6 +94,33 @@ export const orderReducer = createReducer({},{
     },
     
     createOrderFail:(state, action) =>{
+        state.loading = false;
+        state.error= action.payload
+    },
+    createOrderOnlineRequest:state =>{
+        state.loading = true;
+    },
+    
+    createOrderOnlineSuccess:(state, action) =>{
+        state.loading = false;
+        state.message = action.payload
+    },
+    
+    createOrderOnlineFail:(state, action) =>{
+        state.loading = false;
+        state.error= action.payload
+    },
+
+    savePaymentRequest:state =>{
+        state.loading = true;
+    },
+    
+    savePaymentSuccess:(state, action) =>{
+        state.loading = false;
+        state.message = action.payload
+    },
+    
+    savePaymentFail:(state, action) =>{
         state.loading = false;
         state.error= action.payload
     },
