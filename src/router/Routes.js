@@ -88,9 +88,6 @@ export const router = createBrowserRouter([
                 path:'/load',
                 element:<Loader/>
             },
-            
-
         ]
-
     }
 ])

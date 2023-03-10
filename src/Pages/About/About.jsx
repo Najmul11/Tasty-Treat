@@ -12,13 +12,11 @@ const About = () => {
         <article>
           <h4>Tasty Treat</h4>
           <p>
-            We are Tasty Treat. The place for most tasty burgers on the
-            enitre earth.
+            We are Tasty Treat. Juicy burgers, made fresh to order.
           </p>
 
           <p>
-            Explore the various type of food and burgers. Click below to see the
-            menu
+            Burgers so good, you'll want to come back for more. Click below to see the menu
           </p>
 
           <Link to="/">
@@ -35,8 +33,7 @@ const About = () => {
             </div>
 
             <p>
-              I am Najmul Hoque, the founder of Tasty Treat. Affiliated to
-              God Taste...
+              I am Najmul Hoque, the founder of Tasty Treat. Our passion for burgers is what drives us, and we are committed to providing you with the best burger experience possible. So come and join us at TASTY TREAT, where every bite is a tasty treat!
             </p>
           </article>
         </div>

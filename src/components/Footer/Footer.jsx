@@ -7,10 +7,10 @@ const Footer = () => {
       <div>
         <h2>Tasty Treat</h2>
 
-        <p>Indulge in a Delightful Dining Experience at Tasty Treat.</p>
+        <p>Burgers so good, you'll want to come back for more.</p>
         <br />
 
-        <em>We give attention to genuine feedback.</em>
+        <strong>We give attention to genuine feedback.</strong>
 
         <strong>All right reserved @tastytreat</strong>
       </div>

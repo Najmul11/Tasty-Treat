@@ -1,0 +1,50 @@
+@import "colors";
+.modal{
+    width: 700px;
+}
+
+.card{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 500px;
+    border: 1px solid $red;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    >div{
+        >img{
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+.dropButton{
+    background-color: $red;
+    color: white;
+    border: none;
+    width: 20%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size:medium;
+    cursor: pointer,
+}
+
+.dropInput{
+    padding: 5px;
+    border-radius: 5px;
+    font-size:medium;
+     border:1px solid $red;;
+    &:focus {
+        outline:1px solid $red;
+        border: none;
+      }
+}
+.feedback{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}

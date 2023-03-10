@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const MenuCard = ({ itemNum, burgerSrc, price, title, handler, delay = 0 }) => {
+const MenuCard = ({ itemNum, burgerSrc, price, title, handler, delay = 0 , modalhandler}) => {
   return (
     <motion.div
       className="menuCard"
@@ -17,11 +17,14 @@ const MenuCard = ({ itemNum, burgerSrc, price, title, handler, delay = 0 }) => {
         delay,
       }}
     >
-      <div>Item {itemNum}</div>
+      <div>
+        <p>Item {itemNum}</p>
+        <button onClick={()=>modalhandler(itemNum)}>Reviews</button>
+      </div>
       <main>
         <img src={burgerSrc} alt={itemNum} />
 
-        <h5>BDT{price}</h5>
+        <h5>TK{price}</h5>
 
         <p>{title}</p>
 

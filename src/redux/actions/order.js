@@ -35,7 +35,6 @@ export const getMyOrder = ()=>async(dispatch)=>{
             withCredentials:true
         })
         dispatch({type:"getMyOrderSuccess", payload:data.orders})
-        console.log(data);
     } catch (error) {
         dispatch({type:"getMyOrderFail", payload:error.response.data.message })
     }

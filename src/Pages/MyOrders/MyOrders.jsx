@@ -39,9 +39,9 @@ const MyOrders = () => {
                 <td>#{o._id}</td>
                 <td>{o.orderStatus}</td>
                 <td>{
-                o.orderItems.cheeseBurger.quantity+
-                o.orderItems.vegCheeseBurger.quantity+
-                o.orderItems.burgerWithFries.quantity
+                o.orderItems.theClassic.quantity+
+                o.orderItems.theCheesy.quantity+
+                o.orderItems.theFirecracker.quantity
                 }</td>
                 <td>TK{o.totalAmount}</td>
                 <td>{o.paymentMethod}</td>

@@ -96,19 +96,19 @@ const OrderDetails = () => {
           <div>
             <h4>THE CLASSIC</h4>
             <div>
-              <span>{order?.orderItems?.cheeseBurger.quantity}</span> x <span>{order?.orderItems?.cheeseBurger.price}</span>
+              <span>{order?.orderItems?.theClassic.quantity}</span> x <span>{order?.orderItems?.theClassic.price}</span>
             </div>
           </div>
           <div>
             <h4>THE CHEESY</h4>
             <div>
-              <span>{order?.orderItems?.vegCheeseBurger.quantity}</span> x <span>{order?.orderItems?.vegCheeseBurger.price}</span>
+              <span>{order?.orderItems?.theCheesy.quantity}</span> x <span>{order?.orderItems?.theCheesy.price}</span>
             </div>
           </div>
           <div>
             <h4>Burger Fries</h4>
             <div>
-              <span>{order?.orderItems?.burgerWithFries.quantity}</span> x <span>{order?.orderItems?.burgerWithFries.price}</span>
+              <span>{order?.orderItems?.theFirecracker.quantity}</span> x <span>{order?.orderItems?.theFirecracker.price}</span>
             </div>
           </div>
 

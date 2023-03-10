@@ -24,9 +24,9 @@ const CartItem = ({ value, title, img, increment, decrement }) => (
 
 const Cart = () => {
   const {cartItem:{
-    cheeseBurger:{quantity:cheeseBurger},
-    vegCheeseBurger:{quantity:vegCheeseBurger},
-    burgerWithFries:{quantity:burgerWithFries}
+    theClassic:{quantity:theClassic},
+    theCheesy:{quantity:theCheesy},
+    theFirecracker:{quantity:theFirecracker}
   },
   subTotal,tax,shippingCharge, total}=useSelector(state=>state.cart)
 const {cartItem:cart}=useSelector(state=>state.cart)
@@ -38,15 +38,15 @@ const {cartItem:cart}=useSelector(state=>state.cart)
   const increment = (item) => {
     switch (item) {
       case 1:
-        dispatch({type:'cheeseBurgerIncrement'})
+        dispatch({type:'theClassicIncrement'})
         dispatch({type:"calculatePrice"})
         break;
       case 2:
-        dispatch({type:'vegCheeseBurgerIncrement'})
+        dispatch({type:'theCheesyIncrement'})
         dispatch({type:"calculatePrice"})
         break;
       case 3:
-        dispatch({type:'burgerWithFriesIncrement'})
+        dispatch({type:'theFirecrackerIncrement'})
         dispatch({type:"calculatePrice"})
         break;
     
@@ -58,18 +58,18 @@ const {cartItem:cart}=useSelector(state=>state.cart)
   const decrement = (item) => {
     switch (item) {
       case 1:
-        if(cheeseBurger===0) break;
-        dispatch({type:'cheeseBurgerDecrement'})
+        if(theClassic===0) break;
+        dispatch({type:'theClassicDecrement'})
         dispatch({type:"calculatePrice"})
         break;
       case 2:
-        if(vegCheeseBurger===0) break;
-        dispatch({type:'vegCheeseBurgerDecrement'})
+        if(theCheesy===0) break;
+        dispatch({type:'theCheesyDecrement'})
         dispatch({type:"calculatePrice"})
         break;
       case 3:
-        if(burgerWithFries===0) break;
-        dispatch({type:'burgerWithFriesDecrement'})
+        if(theFirecracker===0) break;
+        dispatch({type:'theFirecrackerDecrement'})
         dispatch({type:"calculatePrice"})
         break;
     
@@ -97,21 +97,21 @@ const {cartItem:cart}=useSelector(state=>state.cart)
         <CartItem
           title={"THE CLASSIC"}
           img={burger1}
-          value={cheeseBurger}
+          value={theClassic}
           increment={() => increment(1)}
           decrement={() => decrement(1)}
         />
         <CartItem
           title={"THE CHEESY"}
           img={burger2}
-          value={vegCheeseBurger}
+          value={theCheesy}
           increment={() => increment(2)}
           decrement={() => decrement(2)}
         />
         <CartItem
           title={"THE FIRECRACKER"}
           img={burger3}
-          value={burgerWithFries}
+          value={theFirecracker}
           increment={() => increment(3)}
           decrement={() => decrement(3)}
         />

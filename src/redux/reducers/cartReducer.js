@@ -3,17 +3,17 @@ import {createReducer} from "@reduxjs/toolkit"
 const initialState = {
     cartItem:localStorage.getItem("cartItems")?JSON.parse(localStorage.getItem("cartItems"))
     :{
-        cheeseBurger:{
+        theClassic:{
             quantity:0,
-            price:200,
+            price:150,
         },
-        vegCheeseBurger:{
+        theCheesy:{
+            quantity:0,
+            price:300,
+        },
+        theFirecracker:{
             quantity:0,
             price:500,
-        },
-        burgerWithFries:{
-            quantity:0,
-            price:1800,
         },
     },
     subTotal:localStorage.getItem("cartPrices")?JSON.parse(localStorage.getItem("cartPrices")).subTotal:0,
@@ -24,29 +24,29 @@ const initialState = {
 }
 
 export const cartReducer = createReducer(initialState,{
-    cheeseBurgerIncrement: state =>{
-        state.cartItem.cheeseBurger.quantity +=1;
+    theClassicIncrement: state =>{
+        state.cartItem.theClassic.quantity +=1;
     },
-    vegCheeseBurgerIncrement: state =>{
-        state.cartItem.vegCheeseBurger.quantity +=1;
+    theCheesyIncrement: state =>{
+        state.cartItem.theCheesy.quantity +=1;
     },
-    burgerWithFriesIncrement: state =>{
-        state.cartItem.burgerWithFries.quantity +=1;
+    theFirecrackerIncrement: state =>{
+        state.cartItem.theFirecracker.quantity +=1;
     },
-    cheeseBurgerDecrement: state =>{
-        state.cartItem.cheeseBurger.quantity -=1;
+    theClassicDecrement: state =>{
+        state.cartItem.theClassic.quantity -=1;
     },
-    vegCheeseBurgerDecrement: state =>{
-        state.cartItem.vegCheeseBurger.quantity -=1;
+    theCheesyDecrement: state =>{
+        state.cartItem.theCheesy.quantity -=1;
     },
-    burgerWithFriesDecrement: state =>{
-        state.cartItem.burgerWithFries.quantity -=1;
+    theFirecrackerDecrement: state =>{
+        state.cartItem.theFirecracker.quantity -=1;
     },
 
     calculatePrice : state =>{
-        state.subTotal = state.cartItem.cheeseBurger.quantity* state.cartItem.cheeseBurger.price +
-                        state.cartItem.vegCheeseBurger.quantity* state.cartItem.vegCheeseBurger.price +
-                        state.cartItem.burgerWithFries.quantity* state.cartItem.burgerWithFries.price;
+        state.subTotal = state.cartItem.theClassic.quantity* state.cartItem.theClassic.price +
+                        state.cartItem.theCheesy.quantity* state.cartItem.theCheesy.price +
+                        state.cartItem.theFirecracker.quantity* state.cartItem.theFirecracker.price;
         
         state.tax= state.subTotal * .15;
         state.shippingCharge = state.subTotal > 2000 ? 50 : state.subTotal === 0 ? 0 : 200;
@@ -62,15 +62,15 @@ export const cartReducer = createReducer(initialState,{
 
     emptyState:state=>{
         state.cartItem = {
-            cheeseBurger:{
+            theClassic:{
                 quantity:0,
                 price:200,
             },
-            vegCheeseBurger:{
+            theCheesy:{
                 quantity:0,
                 price:500,
             },
-            burgerWithFries:{
+            theFirecracker:{
                 quantity:0,
                 price:1800,
             },

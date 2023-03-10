@@ -20,6 +20,7 @@ const ConfirmOrder = () => {
     e.preventDefault()
     if (selectedPayment==='COD') {
     const stats = await dispatch(createOrder(cartItem,subTotal,tax,shippingCharge, total, shippingInfo))
+    console.log(stats);
     if (stats.success===true) {
       toast.success(stats.message)
       dispatch({type:'clearMessage'})

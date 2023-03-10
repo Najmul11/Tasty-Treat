@@ -3,9 +3,12 @@ import { motion } from "framer-motion";
 import burger from "../../assets/burger2.png";
 
 const Contact = () => {
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+  }
   return (
     <section className="contact">
-      <motion.form
+      <motion.form onSubmit={handleSubmit}
         initial={{
           x: "-100vw",
           opacity: 0,
@@ -17,12 +20,12 @@ const Contact = () => {
         transition={{ delay: 0.2 }}
       >
         <h2>Contact Us</h2>
-        <input type="text" placeholder="Name" />
-        <input type="email" placeholder="Email" />
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required/>
 
-        <textarea placeholder="Message..." cols="30" rows="10"></textarea>
+        <textarea placeholder="Message..." cols="30" rows="10" required></textarea>
 
-        <button type="submit">Send</button>
+        <button>Send</button>
       </motion.form>
 
       <motion.div
